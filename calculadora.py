@@ -24,29 +24,34 @@ while True:
 
     n1= float(input("Digite o primeiro número que deseja realizar a operação:\n"))
     n2= float(input("Digite o segundo número que deseja realizar a operação:\n"))
-    print("Escolha uma das operações a seguir:")
-    operacao = int(input("\n 1- Soma \n 2- Substração \n 3- Divisão \n 4- Multiplicação\n"))
+    while True:
+        print("Escolha uma das operações a seguir:")
+        operacao = int(input("\n 1- Soma \n 2- Substração \n 3- Divisão \n 4- Multiplicação\n"))
 
-    if operacao == 1:
-        Soma(n1,n2)
-    elif operacao == 2:
-        Sub(n1,n2)
-    elif operacao == 3:
-        Div(n1,n2)
-    elif operacao == 4:
-        Multi(n1,n2)
-    else:
-        print("Digite uma opção válida.")
-        continue
-
-    resposta = input("Deseja realizar mais operações? Se sim, digite S\n")
-    if resposta == 'S':
-        continue
-    else:
-        confirmacao = input("Tem certeza que deseja sair? Se sim, digite S\n")
-        if confirmacao == 'S':
-            print("Programa encerrado.")
+        if operacao == 1:
+            Soma(n1,n2)
+            break
+        elif operacao == 2:
+            Sub(n1,n2)
+            break
+        elif operacao == 3:
+            Div(n1,n2)
+            break
+        elif operacao == 4:
+            Multi(n1,n2)
             break
         else:
-            print("Ótimo! Então vamos continuar.")
+            print("Digite uma opção válida.\n")
             continue
+
+    while True:
+        resposta = input("Deseja realizar mais operações?S/N\n").strip().upper()
+        if resposta in 'SN':
+            break
+        else:
+            input('Digite apenas S ou N\n')
+    if resposta == 'N':
+        break
+    else:
+        continue
+        
