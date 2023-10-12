@@ -10,10 +10,13 @@ while True:
             pista += letra
         else:
             pista += "_ "
-    
     print(pista)
     if "_" not in pista:
         print("Voce ganhou")
+        break
+    if len(letrasE)==6:
+        print("Game over")
+        print("Tentativas erradas:",len(letrasE))
         break
     letra = input("Digite uma letra: ").upper()
     if len(letra) !=1 or not letra.isalpha():
@@ -26,3 +29,5 @@ while True:
     
     if letra in palavrasecreta:
         letrasC+=letra
+    else:
+        letrasE+=letra
