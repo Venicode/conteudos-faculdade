@@ -56,7 +56,8 @@ while True:
         #se não, acrescenta na variável letrasE
         else:
             letrasE+=letra
-    
+            
+#quando o usuario acertar ou errar 6 vezes, irá aparecer a pergunta de jogar novamente
     pergunta = input("Deseja jogar novamente? Se sim digite sim, se não aperte qualquer outra tecla\n").upper().strip()
     if "S" not in pergunta:
         print("Fim do jogo")
