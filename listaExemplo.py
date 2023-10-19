@@ -32,3 +32,12 @@ print(lista)
 #organizando a lista de forma contrária
 numeros.reverse()
 print(numeros)
+
+#percorrendo cada elemento da lista com o for
+for elemento in numeros:
+    print(elemento)
+  
+#alem do print, podemos somar 1 numero a mais em cada elemento da lista:
+for elemento in numeros:
+    soma = int(elemento)+1
+    print(soma)
