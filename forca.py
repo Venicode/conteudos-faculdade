@@ -1,5 +1,14 @@
+from random import choice
+
 print("Jogo da Forca")
-palavrasecreta = "Internet".upper()
+arquivo = "palavras.txt"
+palavras = []
+
+with open (arquivo) as arquivo:
+    for linha in arquivo:
+        palavras.append(linha.strip())
+        
+palavrasecreta = choice(palavras).upper()
 letrasC = ""
 letrasE = ""
 
