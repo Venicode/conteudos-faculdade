@@ -4,10 +4,10 @@ from random import choice
 placarVitorias = 0
 placarDerrotas = 0
 
-forcas = ["asciiArtes/forca0.txt", "asciiArtes/forca1.txt","asciiArtes/forca2.txt","asciiArtes/forca3.txt",
-         "asciiArtes/forca4.txt","asciiArtes/forca5.txt","asciiArtes/forca6.txt","asciiArtes/forca7.txt"]
+forcas = ["JogodaForca/asciiArtes/forca0.txt", "JogodaForca/asciiArtes/forca1.txt","JogodaForca/asciiArtes/forca2.txt","JogodaForca/asciiArtes/forca3.txt",
+         "JogodaForca/asciiArtes/forca4.txt","JogodaForca/asciiArtes/forca5.txt","JogodaForca/asciiArtes/forca6.txt","JogodaForca/asciiArtes/forca7.txt"]
 
-artePrincipal = "asciiArtes/jogodaForca.txt"
+artePrincipal = "JogodaForca/asciiArtes/jogodaForca.txt"
 traco = "_"*60
 def espaco():
     espaco = " "*55
@@ -20,8 +20,8 @@ def asciiArt(arte):
 while True:
     asciiArt(artePrincipal)
     print(traco,"Menu".upper(),traco)
-    listaTemas = {'1 - Jogos':'temas/jogos.txt','2 - Filmes':'temas/filmes.txt','3- Músicas':'temas/musicas.txt',
-                  '4- Tecnologia':'temas/tecnologia.txt','5- Esportes':'temas/esportes.txt','6 - Assuntos Gerais':'temas/geral.txt'}
+    listaTemas = {'1 - Jogos':'JogodaForca/temas/jogos.txt','2 - Filmes':'JogodaForca/temas/filmes.txt','3- Músicas':'JogodaForca/temas/musicas.txt',
+                  '4- Tecnologia':'JogodaForca/temas/tecnologia.txt','5- Esportes':'JogodaForca/temas/esportes.txt','6 - Assuntos Gerais':'JogodaForca/temas/geral.txt'}
     for i in listaTemas.keys():
         print(espaco(),i.upper(),espaco())
     
@@ -101,5 +101,8 @@ while True:
         print("Fim do jogo")
         print("Quantidade de vitórias: ",placarVitorias)
         print("Quantidade de derrotas:",placarDerrotas)
+        input('Digite "Enter" para sair!')
         break
     continue
+
+
