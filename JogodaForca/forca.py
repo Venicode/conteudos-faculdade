@@ -1,18 +1,23 @@
 #importa a biblioteca random com a função choice
 from random import choice
-# -*- coding: UTF-8 -*-
+
 placarVitorias = 0
 placarDerrotas = 0
 
+#lista com cada arquivo das artes dos frames da forca
 forcas = ["asciiArtes/forca0.txt", "asciiArtes/forca1.txt","asciiArtes/forca2.txt","asciiArtes/forca3.txt",
          "asciiArtes/forca4.txt","asciiArtes/forca5.txt","asciiArtes/forca6.txt","asciiArtes/forca7.txt"]
 
+#caminho para a arte do titulo do jogo da forca
 artePrincipal = "asciiArtes/jogodaForca.txt"
+
 traco = "_"*60
+
 def espaco():
     espaco = " "*55
     return espaco
 
+#funcao para printar as artes do txt no programa
 def asciiArt(arte):
      with open (arte,encoding="utf-8") as arte:
         for linha in arte:
@@ -20,6 +25,8 @@ def asciiArt(arte):
 while True:
     asciiArt(artePrincipal)
     print(traco,"Menu".upper(),traco)
+         
+    #menu do jogo, onde cada opção contem o caminho das listas de palavras de acordo com o tema
     listaTemas = {'1-Jogos':'temas/jogos.txt','2-Filmes':'temas/filmes.txt','3-Músicas':'temas/musicas.txt',
                   '4-Tecnologia':'temas/tecnologia.txt','5-Esportes':'temas/esportes.txt','6-Assuntos Gerais':'temas/geral.txt'}
     for i in listaTemas.keys():
