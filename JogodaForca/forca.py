@@ -1,45 +1,45 @@
 #importa a biblioteca random com a função choice
 from random import choice
-
+# -*- coding: UTF-8 -*-
 placarVitorias = 0
 placarDerrotas = 0
 
-forcas = ["JogodaForca/asciiArtes/forca0.txt", "JogodaForca/asciiArtes/forca1.txt","JogodaForca/asciiArtes/forca2.txt","JogodaForca/asciiArtes/forca3.txt",
-         "JogodaForca/asciiArtes/forca4.txt","JogodaForca/asciiArtes/forca5.txt","JogodaForca/asciiArtes/forca6.txt","JogodaForca/asciiArtes/forca7.txt"]
+forcas = ["asciiArtes/forca0.txt", "asciiArtes/forca1.txt","asciiArtes/forca2.txt","asciiArtes/forca3.txt",
+         "asciiArtes/forca4.txt","asciiArtes/forca5.txt","asciiArtes/forca6.txt","asciiArtes/forca7.txt"]
 
-artePrincipal = "JogodaForca/asciiArtes/jogodaForca.txt"
+artePrincipal = "asciiArtes/jogodaForca.txt"
 traco = "_"*60
 def espaco():
     espaco = " "*55
     return espaco
 
-def asciiArt(arte):    
-     with open (arte) as arte:
+def asciiArt(arte):
+     with open (arte,encoding="utf-8") as arte:
         for linha in arte:
             print(linha)
 while True:
     asciiArt(artePrincipal)
     print(traco,"Menu".upper(),traco)
-    listaTemas = {'1 - Jogos':'JogodaForca/temas/jogos.txt','2 - Filmes':'JogodaForca/temas/filmes.txt','3- Músicas':'JogodaForca/temas/musicas.txt',
-                  '4- Tecnologia':'JogodaForca/temas/tecnologia.txt','5- Esportes':'JogodaForca/temas/esportes.txt','6 - Assuntos Gerais':'JogodaForca/temas/geral.txt'}
+    listaTemas = {'1-Jogos':'temas/jogos.txt','2-Filmes':'temas/filmes.txt','3-Músicas':'temas/musicas.txt',
+                  '4-Tecnologia':'temas/tecnologia.txt','5-Esportes':'temas/esportes.txt','6-Assuntos Gerais':'temas/geral.txt'}
     for i in listaTemas.keys():
         print(espaco(),i.upper(),espaco())
-    
+
     resposta = int(input("\nEscolha um tema para jogar:".upper()))
 
     if resposta == 1:
-        arquivo = listaTemas["1 - Jogos"]
+        arquivo = listaTemas["1-Jogos"]
     if resposta == 2:
-        arquivo = listaTemas["2 - Filmes"]
+        arquivo = listaTemas["2-Filmes"]
     if resposta == 3:
-        arquivo = listaTemas["3- Músicas"]
+        arquivo = listaTemas["3-Músicas"]
     if resposta == 4:
-        arquivo = listaTemas["4- Tecnologia"]
+        arquivo = listaTemas["4-Tecnologia"]
     if resposta == 5:
-        arquivo = listaTemas["5- Esportes"]
+        arquivo = listaTemas["5-Esportes"]
     if resposta == 6:
-        arquivo = listaTemas["6 - Assuntos Gerais"]
-    
+        arquivo = listaTemas["6-Assuntos Gerais"]
+
     palavras = []
 
     #abre o arquivo palavras.txt e lê cada linha.
@@ -63,6 +63,7 @@ while True:
             else:
                 pista += "_ "
         print(pista)
+
         #quando não tiver mais nenhum _ , quer dizer que o usuário acertou a palavra
         if "_" not in pista:
             print("Voce ganhou")
@@ -73,6 +74,7 @@ while True:
         if len(letrasE)==7:
             asciiArt(forcas[7])
             print("Game over")
+            print("A palavra secreta era", palavrasecreta)
             print("Tentativas erradas:",len(letrasE))
             placarDerrotas+=1
             break
@@ -94,15 +96,12 @@ while True:
             contador +=1
             asciiArt(forcas[contador])
 
-            
 #quando o usuario acertar ou errar 6 vezes, irá aparecer a pergunta de jogar novamente
     pergunta = input("Deseja jogar novamente? Se sim digite sim, se não aperte qualquer outra tecla\n").upper().strip()
     if "S" not in pergunta:
         print("Fim do jogo")
         print("Quantidade de vitórias: ",placarVitorias)
         print("Quantidade de derrotas:",placarDerrotas)
-        input('Digite "Enter" para sair!')
+        input('Aperte "Enter" para sair!')
         break
     continue
-
-
