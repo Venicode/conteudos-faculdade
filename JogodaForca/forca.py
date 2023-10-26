@@ -17,11 +17,17 @@ def espaco():
     espaco = " "*55
     return espaco
 
-#funcao para printar as artes do txt no programa
+#funcoes para printar as artes do txt no programa
 def asciiArt(arte):
      with open (arte,encoding="utf-8") as arte:
         for linha in arte:
-            print(linha)
+                print(linha.strip())
+                
+def asciiArtForca(arte):
+     with open (arte,encoding="utf-8") as arte:
+        for linha in arte:
+                print(linha)
+    
 while True:
     asciiArt(artePrincipal)
     print(traco,"Menu".upper(),traco)
@@ -50,7 +56,7 @@ while True:
     palavras = []
 
     #abre o arquivo palavras.txt e lê cada linha.
-    with open (arquivo) as arquivo:
+    with open (arquivo, "r", encoding="utf-8") as arquivo:
         for linha in arquivo:
             palavras.append(linha.strip())
 
@@ -61,7 +67,7 @@ while True:
     contador = 0
     while True:
         pista = ""
-        asciiArt(forcas[contador])
+        asciiArtForca(forcas[contador])
         #percorre cada letra da palavra secreta e verifica se a letra que o usuário digitou contém nela
         for letra in palavrasecreta:
             if letra in letrasC:
@@ -79,7 +85,7 @@ while True:
 
         #caso o usuário erre 6 vezes as letras da palavra secreta, ele perde o jogo
         if len(letrasE)==7:
-            asciiArt(forcas[7])
+            asciiArtForca(forcas[7])
             print("Game over")
             print("A palavra secreta era", palavrasecreta)
             print("Tentativas erradas:",len(letrasE))
@@ -101,7 +107,7 @@ while True:
         else:
             letrasE+=letra
             contador +=1
-            asciiArt(forcas[contador])
+            asciiArtForca(forcas[contador])
 
 #quando o usuario acertar ou errar 6 vezes, irá aparecer a pergunta de jogar novamente
     pergunta = input("Deseja jogar novamente? Se sim digite sim, se não aperte qualquer outra tecla\n").upper().strip()
